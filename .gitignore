@@ -1,0 +1,6 @@
+# Secrets 
+.streamlit/secrets.toml 
+.env 
+similarity.pkl 
+__pycache__/ 
+.ipynb_checkpoints/ 
