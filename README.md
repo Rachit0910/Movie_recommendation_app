@@ -65,6 +65,24 @@ streamlit run app.py
 * Movie trailers integration
 * Enhanced UI/UX
 
+## for checking the similiarity score run the function in the cell.
+def recommend_with_scores(movie):
+    movie_index = new_df[new_df['title'] == movie].index[0]
+    distances = similarity[movie_index]
+    
+    movie_list = sorted(
+        list(enumerate(distances)),
+        reverse=True,
+        key=lambda x: x[1]
+    )[1:6]
+    
+    print(f"\nRecommendations for: {movie}\n")
+    for i in movie_list:
+        print(f"{new_df.iloc[i[0]].title:40} Score: {i[1]:.4f}")
+
+recommend_with_scores("any movies name")
+genrally, it lies between 0.1-0.5
+
 ## Author
 
 Rachit Mishra
